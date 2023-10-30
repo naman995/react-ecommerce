@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { decrement, increment, selectCount } from "../../counter/counterSlice";
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
   const count = useSelector(selectCount);
@@ -70,16 +71,15 @@ export default function SignUp() {
                   htmlFor="password"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
-                 Confirm Password
+                  Confirm Password
                 </label>
-                
               </div>
               <div className="mt-2">
                 <input
                   id="confirm-password"
                   name="confirm-password"
                   type="password"
-                   required
+                  required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
@@ -96,13 +96,13 @@ export default function SignUp() {
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-             Already a Memeber
-            <a
-              href="#"
+            Already a Memeber?{" "}
+            <Link
+              to="/login"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
-              log In
-            </a>
+              Log In
+            </Link>
           </p>
         </div>
       </div>
